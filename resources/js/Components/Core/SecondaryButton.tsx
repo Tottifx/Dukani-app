@@ -11,7 +11,7 @@ export default function SecondaryButton({
         <button
             {...props}
             type={type}
-            className={`btn` + className}
+            className={'btn' + className}
             disabled={disabled}
         >
             {children}
