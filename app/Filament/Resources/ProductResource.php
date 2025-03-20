@@ -111,11 +111,11 @@ class ProductResource extends Resource
     {
         return $table
             ->columns([
-//                SpatieMediaLibraryImageColumn::make('images')
-//                    ->collection('images')
-//                    ->limit(1)
-//                    ->conversion('thumb')
-//                    ->label('Image'),
+                SpatieMediaLibraryImageColumn::make('images')
+                    ->collection('images')
+                    ->limit(1)
+                    ->conversion('thumb')
+                    ->label('Image'),
                 Tables\Columns\TextColumn::make('title')
                     ->sortable()
                     ->words(10)
@@ -157,7 +157,7 @@ class ProductResource extends Resource
             'index' => Pages\ListProducts::route('/'),
             'create' => Pages\CreateProduct::route('/create'),
             'edit' => Pages\EditProduct::route('/{record}/edit'),
-//            'images' => Pages\ProductImages::route('/{record}/images'),
+            'images' => Pages\ProductImages::route('/{record}/images'),
 //            'variation-types' => Pages\ProductVariationTypes::class::route('/{record}/variation-types'),
 //            'variations' => Pages\ProductVariations::class::route('/{record}/variations'),
         ];
@@ -167,7 +167,7 @@ class ProductResource extends Resource
     {
         return $page->generateNavigationItems([
             EditProduct::class,
-//            ProductImages::class,
+            ProductImages::class,
 //            ProductVariationTypes::class,
 //            ProductVariations::class,
         ]);
