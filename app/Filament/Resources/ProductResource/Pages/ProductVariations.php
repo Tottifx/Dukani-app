@@ -62,12 +62,14 @@ class ProductVariations extends EditRecord
             Actions\DeleteAction::make(),
         ];
     }
+
     protected function mutateFormDataBeforeFill(array $data): array
     {
         $variations = $this->record->variations->toArray();
         $data['variations'] = $this->mergeCartesianWithExisting($this->record->variationTypes, $variations);
         return $data;
     }
+
     public function mergeCartesianWithExisting($variationTypes, $existingData): array
     {
         $defaultQuantity = $this->record->quantity;
@@ -115,12 +117,12 @@ class ProductVariations extends EditRecord
                 //add the current option to all existing combination
                 foreach ($result as $combination) {
                     $newCombination = $combination + [
-                        'variation_type_' . ($variationType->id) => [
-                            'id' => $option->id,
-                            'name' => $option->name,
-                            'label' => $variationType->name,
-                        ],
-                    ];
+                            'variation_type_' . ($variationType->id) => [
+                                'id' => $option->id,
+                                'name' => $option->name,
+                                'label' => $variationType->name,
+                            ],
+                        ];
 
                     $temp[] = $newCombination;
                 }
@@ -171,8 +173,8 @@ class ProductVariations extends EditRecord
 
         $variations = collect($variations)
             ->map(function ($variation, $key) {
-                return[
-                    'id' => is_numeric($key) ? (int) $key : null,
+                return [
+                    'id' => is_numeric($key) ? (int)$key : null,
                     'variation_type_option_ids' => json_encode($variation['variation_type_option_ids']),
                     'quantity' => $variation['quantity'],
                     'price' => $variation['price'],
