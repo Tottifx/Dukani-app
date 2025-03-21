@@ -31,21 +31,21 @@ class DepartmentSeeder extends Seeder
             ],
             [
                 'name' => 'Home, Garden & Tools',
-                'slug' => Str::slug ('Home, Garden & Tools'),
+                'slug' => Str::slug('Home, Garden & Tools'),
                 'active' => true,
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
                 'name' => 'Books & Audible',
-                'slug' => Str::slug ('Books & Audible'),
+                'slug' => Str::slug('Books & Audible'),
                 'active' => true,
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
                 'name' => 'Healthy & Beauty',
-                'slug' => Str::slug ('Healthy & Beauty'),
+                'slug' => Str::slug('Healthy & Beauty'),
                 'active' => true,
                 'created_at' => now(),
                 'updated_at' => now()
